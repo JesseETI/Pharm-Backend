@@ -8,7 +8,7 @@ if environment is None:
     with open('environment.'+environment+'.json') as config_file:
         CONFIG = json.load(config_file)
 else:
-    #configuration for local encironment
+    #configuration for local environment
     CONFIG = {
         "dbhost" : os.environ.get('DBHOST'),
         "debug" : True,
