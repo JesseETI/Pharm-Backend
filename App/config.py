@@ -10,6 +10,7 @@ if environment is None:
 else:
     #configuration for local environment
     CONFIG = {
+        "dbtype": os.environ.get('DBTYPE'),
         "dbhost" : os.environ.get('DBHOST'),
         "debug" : True,
         "JWTdeltaDays": 7,
