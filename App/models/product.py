@@ -5,12 +5,12 @@ class Product(db.Model):
     code = db.Column(db.Integer, unique=True, nullable=False)
     product_name = db.Column(db.String(300), nullable=False)
     category = db.Column(db.String(300), nullable=False)     
-    supplier_cost_price = db.Column(db.Float(decimal_return_scale=2), nullable=False)
+    supplier_cost_price = db.Column(db.Numeric(10,2), nullable=False)
     supplier = db.Column(db.String(200), nullable = False)    
     QoH = db.Column(db.Integer, nullable = False)
     stock_unit = db.Column(db.Integer, nullable = False)
-    unit_retail_price = db.Column(db.Float(decimal_return_scale=2), nullable = False)
-    total_retail_price = db.Column(db.Float(decimal_return_scale=2), nullable=False)
+    unit_retail_price = db.Column(db.Numeric(10,2), nullable = False)
+    total_retail_price = db.Column(db.Numeric(10,2), nullable=False)
     image = db.Column(db.String(300), nullable=True)
     orders = db.relationship("OrderProduct", back_populates="product")
     
@@ -26,8 +26,8 @@ class Product(db.Model):
             "supplier_cost_price": self.supplier_cost_price,
             "QoH": self.QoH,
             "stock_unit": self.stock_unit,
-            "unit_retail_price": self.unit_retail_price,
-            "total_retail_price": self.total_retail_price,
+            "unit_retail_price": round(self.unit_retail_price,2),
+            "total_retail_price": round(self.total_retail_price,2),
             "image" : self.image,
             "slug" : self.product_name.lower().replace(' ', '-')
             # uncomment for all orders containing the product "orders": [OrderProduct.order.toDict() for OrderProduct in self.orders]
