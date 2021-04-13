@@ -8,7 +8,7 @@ class Order(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="orders")
     item_count = db.Column(db.Integer, nullable=False)
-    order_total = db.Column(db.Numeric(10,2), nullable=False)
+    order_total = db.Column(db.Float(decimal_return_scale=2), nullable=False)
     date_placed = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     pickup_status = db.Column(db.String(50), nullable=False)
     products = db.relationship("OrderProduct", back_populates="order")
