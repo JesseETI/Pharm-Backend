@@ -48,7 +48,7 @@ storage = firebase.storage()
 def create_app():
     app = Flask(__name__, static_url_path='')
     cors = CORS(app, resources={r"/*": {"origins": "*"}})
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://btrlmmycowylnw:de316ca6f12f987b473407d8acd575979d8c43a342edd88e4cdbf498c313cd9b@ec2-34-230-167-186.compute-1.amazonaws.com:5432/df620u4dghj8tl'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://' + CONFIG['dbuser']+ ':' +CONFIG['dbpassword'] + '@'+CONFIG['dbhost']+'/'+ CONFIG['dbname']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config["TEMPLATES_AUTO_RELOAD"] = True
     app.config['SECRET_KEY'] = CONFIG['secret_key']

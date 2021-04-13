@@ -18,6 +18,6 @@ else:
         "dbuser" : os.environ.get('DBUSER'),
         "secret_key" : os.environ.get('SECRET_KEY'),
         "dbpassword": os.environ.get('DBPASSWORD'),
-        "dbport" : 3306
+        "dbport" : os.environ.get('DBPORT'),
     }
 CONFIG['ENV']=environment
