@@ -11,7 +11,7 @@ class Order(db.Model):
     order_total = db.Column(db.Float(decimal_return_scale=2), nullable=False)
     date_placed = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     pickup_status = db.Column(db.String(50), nullable=False)
-    products = db.relationship("OrderProduct", back_populates="order")
+    products = db.relationship("OrderProduct", back_populates="order",  cascade="all,delete")
 
     def toDict(self):
         return{
