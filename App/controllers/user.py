@@ -13,7 +13,7 @@ def create_user(firstname, lastname, email, password, allergy, medications, role
 # get user by email
 def get_user(email):
     print("getting user")
-    user = User.query.filter_by(email=email).first() # if this returns a user, then user is an admin
+    user = User.query.filter_by(email=email).first()
     return user
 
 # get all users - used by admin in - manage users

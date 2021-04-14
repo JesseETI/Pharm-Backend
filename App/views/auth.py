@@ -16,7 +16,6 @@ def get_user_details():
     user = get_user(current_identity.email)
     return jsonify(user.toDict())
 
-
 #Sign up endpoint
 @auth_views.route('/signup', methods=["POST"])
 def signup():

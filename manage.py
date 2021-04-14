@@ -24,7 +24,6 @@ def initDB():
 
 @manager.command
 def addAdmin():
-
     admin = create_user("Andhra", "Maraj", 
     "andhra.maraj@gmail.com", "andhrapass", None, None, role = 2)
     return admin

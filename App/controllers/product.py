@@ -107,6 +107,9 @@ def delete_product_by_slug(p_slug):
     p_name = p_slug.upper().replace('-', ' ')
     product = Product.query.filter(Product.product_name == p_name).first() # if this returns a user, then the email already exists in database
     if product:
+        if product.orders:
+            return False
+
         db.session.delete(product)
         db.session.commit()
         return True
