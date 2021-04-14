@@ -20,7 +20,7 @@ class User(db.Model):
     DOB = db.Column(db.DateTime, nullable = True)
     allergies = db.Column(db.String(255), nullable = True)
     medicines = db.Column(db.String(255), nullable = True)
-    orders = db.relationship("Order",  back_populates="user")
+    orders = db.relationship("Order",  back_populates="user", cascade="all,delete")
         
     def setPassword(self, password): 
         self.password = generate_password_hash(password, method="sha256")

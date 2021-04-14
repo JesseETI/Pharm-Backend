@@ -4,7 +4,7 @@ customer_views = Blueprint('customer_views', __name__, template_folder='../templ
 
 from App.controllers import (
     get_customers,
-    delete_customer_by_id,
+    delete_customer_by_email,
 )
 
 # get list of all customers and return it to frontend
@@ -16,6 +16,6 @@ def display_customers():
 #Deletes customer from database and returns if it was successful
 @customer_views.route('/delete-customer', methods=["DELETE"])
 def delete_customer():
-    customer_id = request.args.get("id")
-    deleted = delete_customer_by_id(customer_id)
+    customer_email = request.args.get("email")
+    deleted = delete_customer_by_email(customer_email)
     return jsonify({"deleted" : deleted})

@@ -28,13 +28,10 @@ def get_customers_by_term(term):
     return list_of_customers
 
 #method for deleting customer at /delete-customer endpoint
-def delete_customer_by_id(customer_id):
+def delete_customer_by_email(email):
     print("deleting customer")
-    customer = User.query.filter(User.id == customer_id).first()
+    customer = User.query.filter(User.email == email).first()
     if customer:
-        if customer.orders:
-            return False
-            
         db.session.delete(customer)
         db.session.commit()
         return True
