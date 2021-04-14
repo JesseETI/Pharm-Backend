@@ -32,6 +32,9 @@ def delete_customer_by_id(customer_id):
     print("deleting customer")
     customer = User.query.filter(User.id == customer_id).first()
     if customer:
+        if customer.orders:
+            return False
+            
         db.session.delete(customer)
         db.session.commit()
         return True
