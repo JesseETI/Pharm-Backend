@@ -5,7 +5,6 @@ from App.models.database import db
 def create_cust_order(customer, item_count, order_total, status):
     newOrder = Order(user_id = customer.id, item_count = item_count, order_total = order_total, pickup_status = status)
     print("Successfully Created")
-    db.session = Session()
     db.session.add(newOrder)
     db.session.commit()
     return newOrder
