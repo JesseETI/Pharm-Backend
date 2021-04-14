@@ -13,6 +13,7 @@ from App.controllers import (
     create_order_product,
     get_order_by_id,
     update_order_by_id,
+    add_order_products,
 )
 
 # get all orders
@@ -39,13 +40,15 @@ def create_order():
     newOrder = create_cust_order(customer, item_count, order_total, status) #association
 
     cart = request.json.get('cart') #call get product by slug for list of products
+    orderProductList = []
     for product in cart:
         slug = product["slug"]
         #find product by slug and add to list of products
         productObj = get_product_by_slug(slug)
         newOrderProduct = create_order_product(newOrder, productObj)
-        newOrder.products.append(newOrderProduct)
-    
+        orderProductList.append(newOrderProduct)
+
+    add_order_products(newOrder, orderProductList)
     return jsonify(newOrder.toDict())
 
 # get specific order by ID

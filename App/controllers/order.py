@@ -9,6 +9,12 @@ def create_cust_order(customer, item_count, order_total, status):
     db.session.commit()
     return newOrder
 
+def add_order_products(Order, OrderProductList):
+    db.session.add(Order)
+    for OrderProduct in OrderProductList:
+        Order.products.append(OrderProduct)
+    db.session.commit()
+
 # get list of ALL orders
 def get_orders():
     print('get all orders')
