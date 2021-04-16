@@ -18,6 +18,7 @@ from App.controllers import (
 
 # get all orders
 @order_views.route('/orders', methods=["GET"])
+@jwt_required()
 def display_orders():
     orderList = get_orders()
     return jsonify(orderList)
@@ -60,6 +61,7 @@ def get_order():
 
 # update order status endpoint
 @order_views.route('/update-order', methods=["PUT"])
+@jwt_required()
 def update_order():
     order_id = request.json.get("id")
     status = request.json.get("status")

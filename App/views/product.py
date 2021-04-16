@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from flask_jwt import jwt_required
 
 product_views = Blueprint('product_views', __name__, template_folder='../templates')
 
@@ -39,6 +40,7 @@ def get_product():
 
 # create product - wasn't fully implemented due to Firebase not setup
 @product_views.route('/create-product', methods=["POST"])
+@jwt_required()
 def create_product():
     code = request.json.get("code")
     name = request.json.get("name")

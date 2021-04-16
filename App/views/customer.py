@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request
+from flask_jwt import jwt_required
 
 customer_views = Blueprint('customer_views', __name__, template_folder='../templates')
 
@@ -9,6 +10,7 @@ from App.controllers import (
 
 # get list of all customers and return it to frontend
 @customer_views.route('/customers', methods=["GET"])
+@jwt_required()
 def display_customers():
     customerList = get_customers()
     return jsonify(customerList)
