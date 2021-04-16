@@ -27,7 +27,7 @@ $ gunicorn -w 4 wsgi:app
 ```
 
 # Deploying
-App will be configured to auto deploy master branch to heroku at [https://uwipharm.herokuapp.com](https://uwipharm.herokuapp.com)
+App will be configured to auto deploy master branch to heroku at [https://pharmacy-app-2021.herokuapp.com](https://pharmacy-app-2021.herokuapp.com)
 
 # Manage.py Commands
 
