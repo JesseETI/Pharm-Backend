@@ -24,6 +24,8 @@ from App.views import (
 )
 
 #Google Firebase configuration file.
+
+'''
 config = {
     "apiKey": CONFIG['apiKey'],
     "authDomain": CONFIG['authDomain'],
@@ -34,6 +36,7 @@ config = {
     "appId": CONFIG['appId'],
     "measurementId": CONFIG['measurementId'],
   }
+'''
 
 firebase = pyrebase.initialize_app(config)
 
