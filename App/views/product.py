@@ -11,7 +11,7 @@ from App.controllers import (
     delete_product_by_slug
 )
 
-#get 20 products based on page # 
+#get 20 products based on page
 @product_views.route('/products', methods=["GET"])
 def display_event():
     page = request.args.get('page')
