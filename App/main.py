@@ -30,7 +30,7 @@ config = {
     "databaseURL": CONFIG['databaseURL'],
     "projectId": CONFIG['projectId'],
     "storageBucket": CONFIG['storageBucket'],
-    "messagingSenderId": CONFIG['messagingSenderIdxw'],
+    "messagingSenderId": CONFIG['messagingSenderId'],
     "appId": CONFIG['appId'],
     "measurementId": CONFIG['measurementId'],
   }
