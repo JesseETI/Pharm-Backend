@@ -4,6 +4,9 @@
 # Pharm Backend
 Backend application for UWI eCommerce Pharmacy Application.
 
+# Documentation
+A comprehensive (91-page) project manual detailing project description, requirements & design specifications, implementation, testing, business aspects and financial considerations can be found here: https://docs.google.com/document/d/1fxAUCb7DTI963H1EBHzLAwpteBhYPSPpNQFbZ1F6wKE/edit?usp=sharing
+
 # Built With
 Flask Web Framework
 
