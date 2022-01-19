@@ -1,9 +1,14 @@
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#env=staging/https://github.com/uwidcit/pharm-backend)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 # Pharm Backend
-Backend application for pharmacy application
+Backend application for UWI eCommerce Pharmacy Application.
+
+# Built With
+Flask Web Framework
+
+# Deployed On
+Heroku
 
 # Dependencies
 * Python3/pip3
