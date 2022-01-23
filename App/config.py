@@ -20,5 +20,14 @@ else:
         "secret_key" : os.environ.get('SECRET_KEY'),
         "dbpassword": os.environ.get('DBPASSWORD'),
         "dbport" : os.environ.get('DBPORT'),
+        #firebase
+        "ApiKey" : os.environ.get('FIREBASEAPIKEY'),
+        "AuthDomain" : os.environ.get('FIREBASEAUTHDOMAIN'),
+        "DatabaseURL" : os.environ.get('FIREBASEDATABASEURL'),
+        "ProjectId" : os.environ.get('FIREBASEPROJECTID'),
+        "StorageBucket" : os.environ.get('FIREBASESTORAGEBUCKET'),
+        "MessagingSenderId" : os.environ.get('FIREBASEMESSAGINGSENDERID'),
+        "AppId" : os.environ.get('FIREBASEAPPID'),
+        "MeasurementId" :  os.environ.get('FIREBASEMEASUREMENTID')
     }
 CONFIG['ENV']=environment
