@@ -25,14 +25,14 @@ from App.views import (
 
 #Google Firebase configuration file.
 config = {
-    "apiKey": "",
-    "authDomain": "",
-    "databaseURL": "",
-    "projectId": "",
-    "storageBucket": "",
-    "messagingSenderId": "",
-    "appId": "",
-    "measurementId": ""
+    "apiKey": CONFIG["firebaseApiKey"],
+    "authDomain": CONFIG["firebaseAuthDomain"],
+    "databaseURL": CONFIG["databaseURL"],
+    "projectId": CONFIG["firebaseProjectId"],
+    "storageBucket": CONFIG["firebaseStorageBucket"],
+    "messagingSenderId": CONFIG["firebaseMessagingSenderId"],
+    "appId": CONFIG["firebaseAppId"],
+    "measurementId": CONFIG["firebaseMeasurementId"]
   }
 
 firebase = pyrebase.initialize_app(config)
@@ -48,7 +48,7 @@ storage = firebase.storage()
 def create_app():
     app = Flask(__name__, static_url_path='')
     cors = CORS(app, resources={r"/*": {"origins": "*"}})
-    app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql+pymysql://m0k7jdg650wjsxom:scq41zzt7ww7dwpf@grp6m5lz95d9exiz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/vsqto06i0kdvymfw'
+    app.config['SQLALCHEMY_DATABASE_URI'] =  'mysql+pymysql://'+CONFIG['dbuser']+':'+CONFIG['dbpassword']+'@'+CONFIG['dbhost']+'/'+CONFIG['dbname']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config["TEMPLATES_AUTO_RELOAD"] = True
     app.config['SECRET_KEY'] = CONFIG['secret_key']
