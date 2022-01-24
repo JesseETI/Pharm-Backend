@@ -25,14 +25,14 @@ from App.views import (
 
 #Google Firebase configuration file.
 config = {
-    "apiKey": CONFIG["apiKey"],
-    "authDomain": CONFIG["authDomain"],
-    "databaseURL": CONFIG["databaseURL"],
-    "projectId": CONFIG["projectId"],
-    "storageBucket": CONFIG["storageBucket"],
-    "messagingSenderId": CONFIG["messagingSenderId"],
-    "appId": CONFIG["appId"],
-    "measurementId": CONFIG["measurementId"]
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+    "appId": "",
+    "measurementId": ""
   }
 
 firebase = pyrebase.initialize_app(config)
